@@ -74,6 +74,22 @@ class SpecsValue extends Model
         
     }
 
+    public function getNormalInIds($ids)
+    {
+        $result=$this->whereIn('id',$ids)->select();
+        return $result;
+    }
+
+    public function getById($id)
+    {
+        if(empty($id)){
+            return false;
+        }
+
+        $res = $this->where('id',$id)->find()->toArray(); 
+        return $res;
+    }
+
   
     
 

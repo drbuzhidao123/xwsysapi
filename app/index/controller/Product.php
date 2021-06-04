@@ -53,12 +53,6 @@ class Product extends BaseController
         return show(config('status.success'), '查询数据成功', $res);
     }
 
-    //关联模型测试
-    public function ceshi()
-    {
-        $proObj = new ModelProduct();
-        $res = $proObj->ceshi();
-        return show(config('status.success'), '查询数据成功', $res);
-    }
+  
 
 }

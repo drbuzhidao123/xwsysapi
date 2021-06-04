@@ -24,6 +24,19 @@ return [
             // 序列化机制 例如 ['serialize', 'unserialize']
             'serialize'  => [],
         ],
-        // 更多的缓存连接
+         // 配置Reids
+         'redis'    =>    [
+            'type'     => 'redis',
+            'host'     => '127.0.0.1',
+            'port'     => '6379',
+            'password' => 'budray2020',
+            //'select'   => '0',
+            // 全局缓存有效期（0为永久有效）
+            //'expire'   => 0,
+            // 缓存前缀
+            'prefix'   => '',
+            //缓存时间
+            'expire' => 3600,
+        ],
     ],
 ];
