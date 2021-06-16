@@ -37,3 +37,5 @@ function get_extension($file)//获取后缀
 {
       return substr($file, strrpos($file, '.')+1);
 }
+
+

@@ -58,7 +58,7 @@ class User extends Model
        return $res;
     }
 
-    public function updateStatusById($userid,$status)
+    public function updateById($userid,$data)
     {
         if(empty($userid)){
          return false;
@@ -67,9 +67,14 @@ class User extends Model
         $where = [
             'id' => $userid
         ];
-
         $user = $this->where($where)->find();
-        $user->status = $status; 
+        
+        if(!empty($data['password'])){
+        $user->password = \passwordMd5($data['password']);
+        }
+        $user->username = $data['username'];
+        $user->mobile = $data['mobile'];
+        $user->address = $data['address']; 
         $res = $user->save();
         return $res;
         

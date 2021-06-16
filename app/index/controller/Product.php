@@ -4,9 +4,6 @@ namespace app\index\controller;
 
 use app\BaseController;
 use app\common\model\Product as ModelProduct;
-use think\facade\App;
-use think\facade\Db;
-use think\facade\Request;
 
 class Product extends BaseController
 {
